@@ -1,0 +1,399 @@
+@import "variables_mixins";
+
+/* Filter overrides */
+.content-body { 
+	.content-feed.placement-feed {
+		.filter-buttons {
+			padding-bottom: .5em;
+		}
+	}
+	
+	ul.filter-buttons {	
+		padding: 0;
+		margin: 0;
+		
+		li {
+			background: none;
+			display: inline;
+			float: left;
+			overflow: hidden;
+			padding: 0;
+			text-overflow: ellipsis;
+
+			@include breakpoint(small) {
+                                width: 100%;
+				margin-bottom: 0.5em;
+                        }
+		}
+	}	
+}
+
+form#faculty-listing-research {
+	clear: both;
+}
+
+.content-body ul.last-name-list {
+	margin: 0;
+	padding: 0;
+	
+	li {
+		background: none;
+		padding: 0 1em 0 0;
+		display: inline-block;
+		margin: 0 0 .5em;
+		
+		a {
+			color: $burnt_orange;
+			font-weight: bold;
+			font-size: 1.05em;
+		}
+		
+		a.active, a:hover {
+			color: #FC8C29;
+			text-decoration: none;
+		}
+	}
+}
+
+.filter-field-label, .filter-position-label, .filter-last-name-label, .filter-research-label, .filter-field-location-label, .filter-field-concentration-label {
+	clear: both;
+	font: italic 1em "Libre Baskerville",serif;
+	padding-bottom: 1em;
+}
+
+.filter-field-location {
+	display: block;
+	float: left;
+}
+.filter-field-concentration {
+	clear: both;
+	display: inline-block;
+	padding: 0 1em 0 13em;
+}
+
+.filter-last-name-label, .filter-reset-container {
+	padding-top: 2em;
+}
+.filter-last-name {
+	margin-bottom: 3.5em;
+}
+
+.filter-field-location-label, .filter-field-concentration-label {
+	padding-top: 1em;
+}
+
+.faculty-staff-title {
+	font-style: italic;
+}
+
+/* Previous and Next links */
+/* This currently feels backwards since align right is left... and align left is right. But it looks correct. */
+.nav-next.alignright {
+	float: left;
+}
+
+.nav-previous.alignleft {
+	float: right;
+}
+
+.nav-next, .nav-previous {
+	a {
+		font-size: 1.2em;
+	}
+}
+
+/* Tables */
+.content-body .tablepress {
+	border-collapse: separate;
+	display: table;
+	
+	td {
+		border: none;
+		padding: 1.25em;
+	}
+	
+	tbody {
+		tr td.column-1 {
+			color: $burnt_orange;
+		}
+		
+		tr td:not(.column-1) {
+			font: 1em Open Sans, sans-serif;
+			font-weight: normal;
+		}
+	}
+
+	thead th {
+		background-color: $dark_orange_illini;
+		color: #FFF;
+		border-style: inset;
+		border-top: .2em solid $dark_orange;
+		border-left: none;
+		border-right: none;
+		font: italic 1.25em "Libre Baskerville",serif;
+		font-weight: normal;
+		padding: .8em 1.6em .8em .8em;
+	}
+	
+	thead tr.row-1 th {
+		line-height: 1.9em;
+	}
+	
+	tr:nth-child(even) {
+		background-color: #eaeaea;
+	}
+	
+	
+}
+
+/* Constant Contact Plugin styling */
+.widget #constant-contact-signup {
+	padding: 0;
+	
+	label {
+		display: none;
+	}
+	
+	.input-text-wrap {
+		width: 100%;
+		
+		input#cc_email {
+			float: left;
+			display: block;
+			margin: .3em -1em 0 0;
+			padding: 1.3em 1em 1.3em 1em;
+			background-color: #525252;
+			color: #bababa;
+			letter-spacing: .05em;
+			border: none;
+			font: .85em "Libre Baskerville",serif;
+			width: 75%;
+			
+			@include breakpoint(medium) {
+				width: 90%;
+			}
+			
+			@include breakpoint(small) {
+				width: 69%;
+			}
+		}
+		
+		@include breakpoint(medium) {
+				width: auto;
+		}
+			
+		@include breakpoint(small) {
+			width: auto;
+		}
+		
+	}
+
+	.submit {
+		float: left;
+		margin: .25em 0;
+		padding: 1em 1em 1em 1em;
+		background: #f28d03 url(img/footer_arrow.png) no-repeat 0 1em;
+		background-position: 50% 50%;
+		color: #fff;
+		border: none;
+		font: 900 1em "Libre Baskerville",serif;
+		
+		&:hover {
+			background-color: #F5B55D; /* Check with Meg/Maya about actual hover color. ~alm */
+		}
+	}
+}
+
+/* CSS styling for Maya to match mockups */
+.content-full {
+	.content-feed {
+		p {
+			line-height: 1.2;
+			margin: 0 0 0.6em 0;
+		}
+		
+		.title {
+			margin-bottom: 0.75em;
+		}
+		
+		&.placement-feed {
+			form {
+				margin: 1em 0 3.5em;
+			}
+			
+			p {
+				margin: 0 0 0.65em 0;
+			}
+			
+			.spacer {
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+				
+				p.disclaimer {
+					font-style: italic;
+				}
+			}
+		}
+		
+		&.staff-feed {
+			form {
+				margin: 1em 0 3.5em;
+			}
+			
+			p {
+				margin: 0 0 0.5em 0;
+			}
+		}
+		&.news-feed {
+			.title {
+				font-family: $libre_baskerville;
+				margin-bottom: .5em;
+				text-transform: none;
+			}
+			.date {
+				font-family: $open_sans;
+				margin-bottom: .85em;
+			}
+		}
+	}
+}
+
+/* Additional hover state for links */
+header.main .top nav ul li a:hover {
+	color: #fd9d18;
+}
+
+main {
+	a:hover {
+		&:not(.gform_save_link) {
+			text-decoration: underline;
+		}
+	}
+	
+	header, nav, .application-widget, .filter-buttons {
+		a:hover {
+			text-decoration: none;
+		}
+	}
+	article a.button:hover {
+		text-decoration: none;
+	}
+}
+
+footer .footer-content .contact {
+	a:hover {
+		color: #fd9d18;
+	}
+	
+	a.email:hover {
+		text-decoration: underline;
+	}
+}
+
+footer .footer-content .menu li a:hover {
+	color: #fd9d18;
+}
+
+footer .footer-content .socialmedia .fb:hover {
+	background: url("img/fb_white.png") no-repeat 15px 10px #626262;
+}
+footer .footer-content .socialmedia .tw:hover {
+	background: url("img/twitter_white.png") no-repeat 10px 13px #626262;
+}
+footer .footer-content .socialmedia .in:hover {
+	background: url("img/linkedin_white.png") no-repeat 10px 13px #626262;
+}
+footer .footer-content .socialmedia .yt:hover {
+	background: url("img/yt_white.png") no-repeat 10px 7px #626262;
+}
+footer .footer-content .socialmedia .ig:hover {
+	background: url("img/instagram_white.png") no-repeat 10px 12px #626262;
+}
+
+/* Single faculty page stylings */
+.faculty {
+	.info-box {
+		
+		.content {
+			
+			.staff-vita {
+				padding: 2em 0;
+			}
+			
+			.google-scholar {
+				background: url(img/right_orange_arrow.png) no-repeat 11.5em 4em;
+				width: 100%;
+				padding: 4em 0;
+				
+				a {
+					color: $burnt_orange;
+				}
+				
+				@include breakpoint (small) {
+					background: url(img/right_orange_arrow.png) no-repeat 11.5em 1em;
+					padding: 1em 0;
+				}
+			}
+		}
+	}
+}
+
+/* Gravity Forms styling */
+.content-body {
+	.gform_wrapper {
+		ul {
+			li {
+				background: none;
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+	margin-left: 1px;
+}
+
+/* Anything Slider */
+.carousel {
+	.caption {
+		margin-top: 20px;
+	}
+}
+
+/* Google Search and Results */
+#cse {
+	table {
+		overflow-x: hidden;
+	}
+}
+
+/* Top, main and mobile sub menu visibility triggers */
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+header.main .top nav.show {
+	display: block;
+}
+header.main .main-menu nav.show {
+	display: block;
+}
+.left-sidebar .menu-toggle-container aside.left.show {
+	display: block;
+}
+
+/* Upcoming events styling */
+section.event-feed {
+	.row-fluid .span3 {
+		float: left;
+	}
+}
+
+/* Testimonial visibility for cache randomization */
+div.testimonial-widget {
+	/*display: none;*/
+}
