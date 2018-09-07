@@ -6,16 +6,14 @@
 		
 		<?php if (is_single()): ?>
 			<div class="clearfix"></div>
-			<div class="stories-carousel-wrapper">
-				<div class="stories-carousel">
-					<h2>More Testimonials</h2>
-                			<?php display_story_carousel(); ?>
-				</div>
-        		</div>
-			<div class="stories-mobile">
+			<section class="stories-carousel">
+				<h2>More Testimonials</h2>
+				<?php display_story_carousel(); ?>
+			</section>
+			<section class="stories-mobile">
                         	<h2>More Testimonials</h2>
                                 <?php display_random_story(); ?>
-                        </div>
+                        </section>
 		<?php endif; ?>
 	</article>
 
