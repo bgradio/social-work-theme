@@ -1,42 +1,42 @@
 <main>
-	<div class="carousel">
+	<article class="carousel">
 		<?php display_carousel(); ?>
-	</div>
-	<div class="s1">
+	</article>
+	<article class="s1">
 		<div class="wrap">
 			<div class="row-fluid">
-				<div class="span8">
+				<section class="span8">
 					<?php dynamic_sidebar('frontpage-1'); ?>
 					<?php dynamic_sidebar('frontpage-2'); ?>
-				</div>
-				<div class="span4 testimonial">
+				</section>
+				<section class="span4 testimonial">
                                        	<?php dynamic_sidebar('frontpage-3'); ?>
-                                </div>
+                                </section>
 			</div>
 		</div>
-	</div>
+	</article>
 
 	<?php $announcement_args = array( 'post_type' => 'announcement', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 1, 'meta_key' => '_pixsosw_active', 'meta_value' => 1 ); ?>
 	<?php $announcement_query = new WP_Query( $announcement_args );	?>
 	<?php if( $announcement_query->have_posts() ): ?>
 		<?php while( $announcement_query->have_posts() ): $announcement_query->the_post();  ?>
-			<div class="announcement-banner">
+			<article class="announcement-banner">
 				<div class="wrap">
-					<div class="announcement">
+					<section class="announcement">
 						<div class="announcement-flag"></div>
 						
 						<div class="announcement-content">
 							<?php echo '<p class="announcement-title">' . get_the_title() . '</p>'; ?>
 							<?php echo '<a class="announcement-url" href="' . get_post_meta( get_the_ID(), '_pixsosw_url', true ) . '">' . get_the_content() . '</a>'; ?>
 						</div>
-					</div>
+					</section>
 				</div>
-			</div>
+			</article>
 		<?php endwhile; ?>
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 
-	<div class="s2">
+	<article class="s2">
 		<div class="wrap">
 			<div class="row-fluid">
 				<div class="span8">
@@ -60,5 +60,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</article>
 </main>
